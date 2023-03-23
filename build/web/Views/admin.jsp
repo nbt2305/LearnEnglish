@@ -298,25 +298,25 @@
                                                                         function managerLockStudent(username) {
                                                                             var s = confirm('Do you want to lock ' + username);
                                                                             if (s === true)
-                                                                                window.location.href = "/LearningEnglish/managerLockStudent?username=" + username;
+                                                                                window.location.href = "/LearningEnglish/adminLock?username=" + username;
                                                                         }
 
                                                                         function managerUnlockStudent(username) {
                                                                             var s = confirm("Do you want to unlock " + username);
                                                                             if (s === true)
-                                                                                window.location.href = "managerUnlockStudent?username=" + username;
+                                                                                window.location.href = "adminUnlock?username=" + username;
                                                                         }
 
                                                                         function managerLockExpert(username) {
                                                                             var s = confirm('Do you want to lock ' + username);
                                                                             if (s === true)
-                                                                                window.location.href = "/LearningEnglish/managerLockExpert?username=" + username;
+                                                                                window.location.href = "/LearningEnglish/adminLock?username=" + username;
                                                                         }
 
                                                                         function managerUnlockExpert(username) {
                                                                             var s = confirm("Do you want to unlock " + username);
                                                                             if (s === true)
-                                                                                window.location.href = "managerUnlockExpert?username=" + username;
+                                                                                window.location.href = "adminUnlock?username=" + username;
                                                                         }
 
 

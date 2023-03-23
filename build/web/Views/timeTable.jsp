@@ -300,7 +300,7 @@
                 <h4 style="text-align: center;color: #ffffff;padding-bottom: 30px"><i class="fa-solid fa-house"></i> 
                     <a onmouseover="this.style.color = '#8ebcee';" onmouseout="this.style.color = '#ffffff';" style="color: #ffffff" href="/LearningEnglish/home">Home</a>  <i class="fa-solid fa-angle-right"></i>
                     <a onmouseover="this.style.color = '#8ebcee';" onmouseout="this.style.color = '#ffffff';"style="color: #ffffff" href="/LearningEnglish/teacher/timeTable"> 
-                    <a onmouseover="this.style.color = '#8ebcee';" onmouseout="this.style.color = '#ffffff';"style="color: #ffffff"href="/LearningEnglish/teacher/manageClassOnline">Manage class online</a> <i class="fa-solid fa-angle-right"></i> </a> 
+                        <a onmouseover="this.style.color = '#8ebcee';" onmouseout="this.style.color = '#ffffff';"style="color: #ffffff"href="/LearningEnglish/teacher/manageClassOnline">Manage class online</a> <i class="fa-solid fa-angle-right"></i> </a> 
                     <a onmouseover="this.style.color = '#8ebcee';" onmouseout="this.style.color = '#ffffff';"style="color: #ffffff"href="/LearningEnglish/teacher/timeTable?classId=${classId}" >Timetable</a>  </h4>
 
 
@@ -379,7 +379,7 @@
                                 <p id="mess1"></p>
                             </div>
                             <div class="form-group">
-                                Slot: <select name="slot">
+                                Slot: <select onchange="CheckSlot(this)" name="slot">
                                     <option value="1">Slot 1</option>
                                     <option value="2">Slot 2</option>
                                     <option value="3">Slot 3</option>
@@ -453,6 +453,34 @@
 
                         function GetIdTimeTable(id) {
                             document.getElementById("id").value = id;
+                        }
+
+                        function CheckSlot(t) {
+                            var today = new Date();
+                            var hour = today.getHours();
+                            var mess = document.getElementById("messSlot");
+                            var isValid;
+                            if (t.value === '1') {
+                                isValid = hour > 8;
+                            } else if (t.value === '2') {
+                                isValid = hour > 10;
+                            } else if (t.value === '3') {
+                                isValid = hour > 12;
+                            } else if (t.value === '4') {
+                                isValid = hour > 14;
+                            } else if (t.value === '5') {
+                                isValid = hour > 16;
+                            } else if (t.value === '6') {
+                                isValid = hour > 18;
+                            }
+
+                            if (isValid === true) {
+                                mess.innerHTML = "the slot must have hour after current hour";
+                                document.getElementById("btnCreate").setAttribute("disabled", "disabled");
+                            } else {
+                                mess.innerHTML = "";
+                                document.getElementById("btnCreate").removeAttribute("disabled");
+                            }
                         }
         </script>
     </body>

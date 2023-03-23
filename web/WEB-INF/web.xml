@@ -268,6 +268,14 @@
         <servlet-name>Admin</servlet-name>
         <servlet-class>control.Admin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminLock</servlet-name>
+        <servlet-class>control.AdminLock</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminUnlock</servlet-name>
+        <servlet-class>control.AdminUnlock</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -527,6 +535,14 @@
     <servlet-mapping>
         <servlet-name>Admin</servlet-name>
         <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminLock</servlet-name>
+        <url-pattern>/adminLock</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminUnlock</servlet-name>
+        <url-pattern>/adminUnlock</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
